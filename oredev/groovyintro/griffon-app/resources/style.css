@@ -1,0 +1,16 @@
+.header {
+  font-family: SansSerif;
+  font-size: 42;
+}
+.footer {
+  font-family: SansSerif;
+  font-size: 22;
+}
+.normal {
+  font-family: SansSerif;
+  font-size: 32;
+}
+.code {
+  font-family: Monospaced;
+  font-size: 30;
+}
