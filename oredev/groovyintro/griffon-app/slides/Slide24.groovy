@@ -7,7 +7,7 @@ def myActionListener = { event ->
 } as java.awt.event.ActionListener
 
 def renderer = [
-   getTableCellRendererComponent = { t, v, s, f, r , c ->
+   getTableCellRendererComponent: { t, v, s, f, r , c ->
       // cool renderer code goes here
    }
 ] as DTCR
