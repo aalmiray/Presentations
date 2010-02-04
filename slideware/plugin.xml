@@ -1,14 +1,22 @@
-<plugin name='slideware' version='0.2' jdk='1.5'>
+<plugin name='slideware' version='0.2' griffonVersion='0.3-BETA-2 &gt; *' jdk='1.5'>
   <author>Andres Almiray</author>
   <authorEmail>aalmiray@users.sourceforge.net</authorEmail>
   <title>Griffon based slideware</title>
   <documentation>http://griffon.codehaus.org/Slideware+Plugin</documentation>
+  <plugin name='transitions' version='0.1.3' />
+  <plugin name='css-builder' version='0.4' />
+  <plugin name='gfx-builder' version='0.2.3' />
+  <plugin name='jide-builder' version='0.2' />
+  <plugin name='swingx-builder' version='0.1' />
+  <plugin name='jbusycomponent' version='0.2' />
+  <plugin name='glazedlists' version='0.2' />
   <dependencies>
     <plugin name='transitions' version='0.1.3' />
-    <plugin name='css-builder' version='0.3' />
+    <plugin name='css-builder' version='0.4' />
     <plugin name='gfx-builder' version='0.2.3' />
     <plugin name='jide-builder' version='0.2' />
     <plugin name='swingx-builder' version='0.1' />
-    <plugin name='jbusycomponent' version='0.1' />
+    <plugin name='jbusycomponent' version='0.2' />
+    <plugin name='glazedlists' version='0.2' />
   </dependencies>
 </plugin>

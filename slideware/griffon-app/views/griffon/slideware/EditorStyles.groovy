@@ -13,7 +13,7 @@ import javax.swing.text.StyledDocument
 import groovy.ui.text.GroovyFilter
 
 class EditorStyles {
-	static getPlatformStyles() {
+    static getPlatformStyles() {
         def styles = [
             // output window styles
             regular: [
@@ -114,14 +114,14 @@ class EditorStyles {
                 ],
             ]
         }
-		return styles
-	}
+        return styles
+    }
 
-	static apply( editor ) {
-		def inputArea = editor.textEditor
-		def applyStyle = {Style style, values -> values.each{k, v -> style.addAttribute(k, v)}}
+    static apply( editor ) {
+        def inputArea = editor.textEditor
+        def applyStyle = {Style style, values -> values.each{k, v -> style.addAttribute(k, v)}}
 
-		if( isWindowsVista ) {
+        if( isWindowsVista ) {
             // in JDK 1.5 we need to turn on anti-aliasing so consolas looks better
             if( isJdk15 && !isJdk16 ) {
                 def key = InvokerHelper.getProperty('com.sun.java.swing.SwingUtilities2' as Class,
@@ -142,16 +142,16 @@ class EditorStyles {
             }
         }
 
-		// redo styles for editor
-		def doc = inputArea.getStyledDocument()
-		StyleContext styleContext = StyleContext.getDefaultStyleContext()
-		getPlatformStyles().each {styleName, defs ->
-			Style style = styleContext.getStyle(styleName)
-			if (style) {
-				applyStyle(style, defs)
-			}
-		}
+        // redo styles for editor
+        def doc = inputArea.getStyledDocument()
+        StyleContext styleContext = StyleContext.getDefaultStyleContext()
+        getPlatformStyles().each {styleName, defs ->
+            Style style = styleContext.getStyle(styleName)
+            if (style) {
+                applyStyle(style, defs)
+            }
+        }
 
-		inputArea.background = Color.WHITE
-	}
+        inputArea.background = Color.WHITE
+    }
 }

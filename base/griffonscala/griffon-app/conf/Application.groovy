@@ -18,4 +18,4 @@ resolution {
     }
 }
 
-fullscreen = true
+fullscreen = false
