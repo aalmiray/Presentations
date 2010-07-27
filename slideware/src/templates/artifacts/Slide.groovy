@@ -1,5 +1,6 @@
-import net.miginfocom.swing.MigLayout
-
-slide(id: "slide@count@", layout: new MigLayout("fill","[center]","[center]")) {
+slide(id: 'slide@count@', title: 'slide@count@') {
+    migLayout(layoutConstraints: 'fill',
+              columnConstraints: '[center]',
+              rowConstraints: '[center]')
     label("Insert your text here")
 }

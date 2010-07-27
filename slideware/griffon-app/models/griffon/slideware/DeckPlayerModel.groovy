@@ -1,32 +1,36 @@
+/*
+ * Copyright 2009-2010 the original author or authors.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package griffon.slideware
 
 import groovy.beans.Bindable
+import griffon.lookandfeel.LookAndFeelManager
+import griffon.lookandfeel.LookAndFeelInfo
 
+/**
+ * @author Andres.Almiray
+ */
 class DeckPlayerModel {
-    Map lafs = [
-        Autumn: "org.jvnet.substance.skin.SubstanceAutumnLookAndFeel",
-        BusinessBlackSteel: "org.jvnet.substance.skin.SubstanceBusinessBlueSteelLookAndFeel",
-        BusinessBlueSteel: "org.jvnet.substance.skin.SubstanceBusinessBlueSteelLookAndFeel",
-        Business: "org.jvnet.substance.skin.SubstanceBusinessLookAndFeel",
-        ChallengerDeep: "org.jvnet.substance.skin.SubstanceChallengerDeepLookAndFeel",
-        CremeCoffee: "org.jvnet.substance.skin.SubstanceCremeCoffeeLookAndFeel",
-        Creme: "org.jvnet.substance.skin.SubstanceCremeLookAndFeel",
-        DustCoffee: "org.jvnet.substance.skin.SubstanceDustCoffeeLookAndFeel",
-        Dust: "org.jvnet.substance.skin.SubstanceDustLookAndFeel",
-        EmeraldDusk: "org.jvnet.substance.skin.SubstanceEmeraldDuskLookAndFeel",
-        Magma: "org.jvnet.substance.skin.SubstanceMagmaLookAndFeel",
-        MistAqua: "org.jvnet.substance.skin.SubstanceMistAquaLookAndFeel",
-        MistSilver: "org.jvnet.substance.skin.SubstanceMistSilverLookAndFeel",
-        Moderate: "org.jvnet.substance.skin.SubstanceModerateLookAndFeel",
-        NebulaBrickWall: "org.jvnet.substance.skin.SubstanceNebulaBrickWallLookAndFeel",
-        Nebula: "org.jvnet.substance.skin.SubstanceNebulaLookAndFeel",
-        OfficeBlue2007: "org.jvnet.substance.skin.SubstanceOfficeBlue2007LookAndFeel",
-        OfficeSilver2007: "org.jvnet.substance.skin.SubstanceOfficeSilver2007LookAndFeel",
-        RavenGraphiteGlass: "org.jvnet.substance.skin.SubstanceRavenGraphiteGlassLookAndFeel",
-        RavenGraphite: "org.jvnet.substance.skin.SubstanceRavenGraphiteLookAndFeel",
-        Raven: "org.jvnet.substance.skin.SubstanceRavenLookAndFeel",
-        Sahara: "org.jvnet.substance.skin.SubstanceSaharaLookAndFeel",
-        Twilight: "org.jvnet.substance.skin.SubstanceTwilightLookAndFeel",
-        Napkin: "net.sourceforge.napkinlaf.NapkinLookAndFeel"
-    ]
+    Map lafs = [:]
+    LookAndFeelInfo selectedLaf
+
+    DeckPlayerModel() {
+        LookAndFeelManager.instance.lookAndFeelProviders.sort().each { provider ->
+            provider.supportedLookAndFeels.sort().each { laf ->
+                lafs[(provider.toString() +' - '+ laf.toString())] = laf
+            }
+        }
+    }
 }

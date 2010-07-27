@@ -1,3 +1,19 @@
+/*
+ * Copyright 2009-2010 the original author or authors.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package griffon.slideware
 
 import java.awt.Dimension
@@ -18,6 +34,9 @@ import org.codehaus.groovy.control.messages.SyntaxErrorMessage
 import org.codehaus.groovy.control.messages.ExceptionMessage
 import org.codehaus.groovy.syntax.SyntaxException
 
+/**
+ * @author Andres.Almiray
+ */
 class CodeEditorController {
     def model
     def view
@@ -31,7 +50,7 @@ class CodeEditorController {
         app.config.editor.hide.timeout = app.config?.editor?.hide?.timeout ?: 15000
         systemOutInterceptor = new SystemOutputInterceptor({ String str ->
             appendOutput(str, model.styles.outputStyle)
-			false
+            false
         })
     }
 
@@ -56,7 +75,7 @@ class CodeEditorController {
 
     private finishNormal(result) {
         ensureNoDocLengthOverflow(model.document)
-		if(model.document.length) popOutputWindow()
+        if(model.document.length) popOutputWindow()
     }
 
     private finishException(t) {
@@ -148,7 +167,7 @@ class CodeEditorController {
 
     private popOutputWindow() {
         model.outputWindow.pack()
-		// TODO use the scrollPane's size instead
+        // TODO use the scrollPane's size instead
         def es = view.editor.size
         model.outputWindow.size = es
         model.outputWindow.visible = true
