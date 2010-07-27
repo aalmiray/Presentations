@@ -8,10 +8,10 @@ def stats = '''griffon stats
 +----------------------+-------+-------+
 | Name                 | Files |  LOC  |
 +----------------------+-------+-------+
-| Lifecycle            |     5 |     8 |
-| Slides               |    25 |   539 |
+| Lifecycle            |     5 |     2 |
+| Slides               |    25 |   538 |
 +----------------------+-------+-------+
-| Totals               |    30 |   547 |
+| Totals               |    30 |   540 |
 +----------------------+-------+-------+'''
 
 slide(id: 'slide21', draw: draw, layout: new MigLayout('fill','3%[left]3%',''), transition: new CurtainTransition2D()) {
