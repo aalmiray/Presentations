@@ -34,6 +34,10 @@
     font-family: SansSerif;
     font-size: '${((screenWidth * 36)/1024) as int}';
 }
+.code {
+  font-family: Monospaced;
+  font-size: '${((screenWidth * 28)/1024) as int}';
+}
 .demo {
     font-family: SansSerif;
     font-size: '${((screenWidth * 28)/1024) as int}';
