@@ -6,9 +6,9 @@ log4j = {
         event   name: 'logger', layout: pattern(conversionPattern: '%d [%t] %-5p %c - %m%n')
     }
 
-    warn  'org.codehaus.griffon'
+    error  'org.codehaus.griffon'
 
-    info   'griffon.util',
+    trace   'griffon.util',
            'griffon.core',
            'griffon.swing',
            'griffon.app'

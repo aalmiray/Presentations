@@ -13,6 +13,23 @@
  */
 
 import groovy.swing.SwingBuilder
-import static griffon.util.GriffonApplicationUtils.isIsMacOSX
+import static griffon.util.GriffonApplicationUtils.isMacOSX
 
 SwingBuilder.lookAndFeel((isMacOSX ? 'system' : 'nimbus'), 'gtk', ['metal', [boldFonts: false]])
+
+execSync { 
+    println "inside sync"
+    println "uiThread ${isUIThread()}"
+}
+execSync { 
+    println "inside async"
+    println "uiThread ${isUIThread()}"
+}
+execOutside { 
+    println "inside outside"
+    println "uiThread ${isUIThread()}"
+}
+execFuture { 
+    println "inside future"
+    println "uiThread ${isUIThread()}"
+}
