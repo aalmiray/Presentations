@@ -1,0 +1,7 @@
+out
+target
+.gradle
+.idea
+*.iml
+*.ipr
+*.iwr
